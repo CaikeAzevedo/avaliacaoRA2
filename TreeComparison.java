@@ -76,6 +76,23 @@ public class TreeComparison {
             System.out.println("Tempo de remoção para " + size + " elementos:");
             System.out.println("BinaryTree: " + (endBT - startBT) + " nanosegundos.");
             System.out.println("AVLTree: " + (endAVL - startAVL) + " nanosegundos.");
+            
+            //Remoção de um valor especifico(42)
+            
+            
+            int specificDeleteNumber = 42; 
+
+            long startBTSingle = System.nanoTime();
+            bt.setRoot(bt.removeRec(bt.getRoot(), specificDeleteNumber));
+            long endBTSingle = System.nanoTime();
+
+            long startAVLSingle = System.nanoTime();
+            avl.setRoot(avl.deleteNode(avl.getRoot(), specificDeleteNumber));
+            long endAVLSingle = System.nanoTime();
+
+            System.out.println("Tempo de remoção do número " + specificDeleteNumber + ":");
+            System.out.println("BinaryTree: " + (endBTSingle - startBTSingle) + " nanosegundos.");
+            System.out.println("AVLTree: " + (endAVLSingle - startAVLSingle) + " nanosegundos.");
 
                         System.out.println("==========================================");
                     }
